@@ -23,6 +23,8 @@ app.use(bodyParser.json());
 app.get('/', (req, res) => {
     res.sendFile(__dirname + '/client/build/index.html')
 })
+const ideasController = require('./controllers/IdeasController')
+app.use('/ideas', ideasController)
 
 const PORT = process.env.PORT || 3001;
 app.listen(PORT, () => {
